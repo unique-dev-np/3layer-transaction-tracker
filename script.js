@@ -94,13 +94,17 @@ function renderOverviewPanel() {
 
   let store = 0,
     friends = 0,
-    returned = 0;
+    returned = 0,
+    totalReturns = 0;
 
   txns.forEach((t) => {
     const amt = parseFloat(t.amount);
     if (t.layer === FUNDING_LAYER_NAME) store += amt;
     if (t.layer === DISTRIBUTION_LAYER_NAME) friends += amt;
-    if (t.layer === RETURN_LAYER_NAME) returned += amt;
+    if (t.layer === RETURN_LAYER_NAME) {
+      returned += amt;
+      totalReturns++;
+    }
   });
 
   const toBeReturned = friends - returned;
@@ -123,7 +127,8 @@ function renderOverviewPanel() {
       )}</li>
       <li><strong>To Be Returned to Store:</strong> Rs. ${toBeReturned.toFixed(
         2
-      )}</li>
+      )}</li><br/>
+      <li><strong>Total Returns:</strong> ${totalReturns}</li>
     </ul>
     <input type="number" id="storeToBankAmount" placeholder="Amount">
     <button onclick="handleStoreToBank()">Send Store → Personal</button>
