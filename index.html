@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Transaction Tracker Dashboard</title>
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <header>
+      <h1>3-Layer Transaction Tracker</h1>
+    </header>
+
+    <section id="overviewPanel" class="dashboard-section"></section>
+
+    <section id="friendManager" class="dashboard-section">
+      <h3>Manage Friends</h3>
+      <input id="newFriendInput" placeholder="Enter friend name" />
+      <button id="addFriendBtn">Add Friend</button>
+      <ul id="friendList"></ul>
+    </section>
+
+    <section id="manualDistribute" class="dashboard-section">
+      <h3>Distribute to Friends</h3>
+      <select id="distributeFriendSelect"></select>
+      <input type="number" id="distributeAmount" placeholder="Amount" />
+      <button id="distributeSubmitBtn">Distribute</button>
+    </section>
+
+    <section id="manualReturn" class="dashboard-section">
+      <h3>Friend → Store Transaction</h3>
+      <select id="returnFriendSelect"></select>
+      <input type="number" id="returnAmount" placeholder="Amount" />
+      <button id="returnSubmitBtn">Record Return</button>
+    </section>
+
+    <section id="friendBalances" class="dashboard-section"></section>
+
+    <section id="transactionSection" class="dashboard-section">
+      <h3>All Transactions</h3>
+      <table>
+        <thead>
+          <tr>
+            <th>Date</th>
+            <th>From</th>
+            <th>To</th>
+            <th>Amount</th>
+            <th>Layer</th>
+            <th>Note</th>
+            <th>Remove</th>
+          </tr>
+        </thead>
+        <tbody id="transactionTable"></tbody>
+      </table>
+    </section>
+
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <script src="script.js"></script>
+  </body>
+</html>
