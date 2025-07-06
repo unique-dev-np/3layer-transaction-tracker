@@ -275,6 +275,7 @@ document.getElementById("pasteJSONBtn").onclick = () => {
 
     localStorage.setItem(STORAGE_KEY, JSON.stringify(data.transactions));
     localStorage.setItem(FRIEND_KEY, JSON.stringify(data.friends));
+    renderAll();
   } catch {
     console.log("Error");
   }
