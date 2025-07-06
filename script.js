@@ -144,7 +144,8 @@ function handleStoreToBank() {
         "Store Account",
         "Bank Account",
         amount,
-        "Manual Transfer"
+        "Manual Transfer",
+        FUNDING_LAYER_NAME
       )
     );
     renderAll();
@@ -231,6 +232,8 @@ document.getElementById("distributeSubmitBtn").onclick = () => {
       )
     );
     renderAll();
+
+    document.getElementById("distributeAmount").value = "";
   }
 };
 
@@ -249,6 +252,7 @@ document.getElementById("returnSubmitBtn").onclick = () => {
       )
     );
     renderAll();
+    document.getElementById("returnAmount").value = "";
   }
 };
 
