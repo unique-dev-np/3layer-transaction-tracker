@@ -8,6 +8,7 @@ const returnSelect = document.getElementById("returnFriendSelect");
 
 const STORAGE_KEY = "layerTransactions";
 const FRIEND_KEY = "customFriends";
+const BACKUPS_KEY = "backups";
 
 const FUNDING_LAYER_NAME = "StoreToPersonal";
 const DISTRIBUTION_LAYER_NAME = "Distribution";
@@ -49,6 +50,7 @@ function renderFriendControls() {
     returnSelect.appendChild(opt2);
   });
 }
+
 function removeFriend(name) {
   let friends = getFriends().filter((f) => f !== name);
   localStorage.setItem(FRIEND_KEY, JSON.stringify(friends));
@@ -86,6 +88,62 @@ function createTransaction(date, from, to, amount, note = "", layer) {
 
 function today() {
   return new Date().toISOString().split("T")[0];
+}
+
+// === Backups ===
+
+function addBackup() {
+  const transactions = getTransactions();
+  const friends = getFriends();
+
+  const backup = {
+    transactions,
+    friends,
+    date: today(),
+  };
+
+  const backups = getBackups();
+
+  backups.push(backup);
+
+  localStorage.setItem(BACKUPS_KEY, JSON.stringify(backups));
+
+  renderBackups();
+}
+
+function getBackups() {
+  return JSON.parse(localStorage.getItem(BACKUPS_KEY)) || [];
+}
+
+function removeBackup(index) {
+  let backups = getBackups();
+  backups.splice(parseInt(index), 1);
+
+  localStorage.setItem(BACKUPS_KEY, JSON.stringify(backups));
+  renderBackups();
+}
+
+function copyBackup(index) {
+  const backups = getBackups();
+
+  const backup = backups.splice(index, 1);
+
+  navigator.clipboard.writeText(
+    JSON.stringify({ ...backup[0], type: "backup" })
+  );
+}
+
+function renderBackups() {
+  const backups = getBackups();
+
+  const backupContainer = document.querySelector("#backupContainer");
+
+  backupContainer.innerHTML = "";
+  backups.forEach((backup, index) => {
+    const li = document.createElement("li");
+    li.innerHTML = `${backup.date} <button style="margin-left:20px;" onclick="removeBackup('${index}')">🗑️</button> <button onclick="copyBackup('${index}')">Copy JSON</button> `;
+    backupContainer.appendChild(li);
+  });
 }
 
 // === UI Render ===
@@ -206,6 +264,7 @@ function renderAll() {
   renderOverviewPanel();
   renderFriendBalances();
   renderTransactionTable();
+  renderBackups();
 }
 
 // === Event Listeners ===
