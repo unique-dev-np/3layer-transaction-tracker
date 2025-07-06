@@ -1,8 +1,6 @@
-// === DOM Elements ===
 const table = document.getElementById("transactionTable");
 const overviewPanel = document.getElementById("overviewPanel");
 const friendBalances = document.getElementById("friendBalances");
-const friendListEl = document.getElementById("friendList");
 const distributeSelect = document.getElementById("distributeFriendSelect");
 const returnSelect = document.getElementById("returnFriendSelect");
 
@@ -13,6 +11,32 @@ const BACKUPS_KEY = "backups";
 const FUNDING_LAYER_NAME = "StoreToPersonal";
 const DISTRIBUTION_LAYER_NAME = "Distribution";
 const RETURN_LAYER_NAME = "Return";
+
+// === Navigation ===
+
+document.addEventListener("DOMContentLoaded", () => {
+  const navLinks = document.querySelectorAll(".sidebar-nav a");
+  const pages = document.querySelectorAll(".page");
+
+  navLinks.forEach((link) => {
+    link.addEventListener("click", (e) => {
+      e.preventDefault();
+      const targetId = link.getAttribute("href").substring(1);
+
+      pages.forEach((page) => {
+        page.classList.toggle("active", page.id === targetId);
+      });
+
+      navLinks.forEach((navLink) => {
+        navLink.classList.toggle("active", navLink.getAttribute("href").substring(1) === targetId);
+      });
+    });
+  });
+
+  feather.replace();
+  renderAll();
+});
+
 
 // === Friend Management ===
 function getFriends() {
@@ -30,15 +54,10 @@ function saveFriend(name) {
 
 function renderFriendControls() {
   const friends = getFriends();
-  friendListEl.innerHTML = "";
   distributeSelect.innerHTML = "";
   returnSelect.innerHTML = "";
 
   friends.forEach((friend) => {
-    const li = document.createElement("li");
-    li.innerHTML = `${friend} <button onclick="removeFriend('${friend}')">🗑️</button>`;
-    friendListEl.appendChild(li);
-
     const opt1 = document.createElement("option");
     opt1.value = friend;
     opt1.textContent = friend;
@@ -52,9 +71,13 @@ function renderFriendControls() {
 }
 
 function removeFriend(name) {
-  let friends = getFriends().filter((f) => f !== name);
-  localStorage.setItem(FRIEND_KEY, JSON.stringify(friends));
-  renderAll();
+  if (
+    confirm(`Are you sure you want to remove ${name}? This action cannot be undone.`)
+  ) {
+    let friends = getFriends().filter((f) => f !== name);
+    localStorage.setItem(FRIEND_KEY, JSON.stringify(friends));
+    renderAll();
+  }
 }
 
 // === Transactions ===
@@ -69,10 +92,16 @@ function saveTransaction(txn) {
 }
 
 function deleteTransaction(index) {
-  const txns = getTransactions();
-  txns.splice(index, 1);
-  localStorage.setItem(STORAGE_KEY, JSON.stringify(txns));
-  renderAll();
+  if (
+    confirm(
+      `Are you sure you want to delete this transaction? This action cannot be undone.`
+    )
+  ) {
+    const txns = getTransactions();
+    txns.splice(index, 1);
+    localStorage.setItem(STORAGE_KEY, JSON.stringify(txns));
+    renderAll();
+  }
 }
 
 function createTransaction(date, from, to, amount, note = "", layer) {
@@ -149,99 +178,151 @@ function renderBackups() {
 // === UI Render ===
 function renderOverviewPanel() {
   const txns = getTransactions();
+  const friends = getFriends();
 
   let store = 0,
-    friends = 0,
+    distributed = 0,
     returned = 0,
     totalReturns = 0;
 
   txns.forEach((t) => {
     const amt = parseFloat(t.amount);
     if (t.layer === FUNDING_LAYER_NAME) store += amt;
-    if (t.layer === DISTRIBUTION_LAYER_NAME) friends += amt;
+    if (t.layer === DISTRIBUTION_LAYER_NAME) distributed += amt;
     if (t.layer === RETURN_LAYER_NAME) {
-      returned += amt;
-      totalReturns++;
+        returned += amt;
+        totalReturns++;
     }
   });
 
-  const toBeReturned = friends - returned;
-  const toBeDistributed = store - friends;
+  const toBeReturned = distributed - returned;
+  const toBeDistributed = store - distributed;
 
   overviewPanel.innerHTML = `
-    <h3>Overview</h3>
-    <ul>
-      <li><strong>Total Sent from Store:</strong> Rs. ${store.toFixed(
-        2
-      )}</li> <br/>
-      <li><strong>Total Sent to Friends:</strong> Rs. ${friends.toFixed(
-        2
-      )}</li> 
-      <li><strong>To Be Sent to Friends:</strong> Rs. ${toBeDistributed.toFixed(
-        2
-      )}</li><br/>
-      <li><strong>Total Returned to Store:</strong> Rs. ${returned.toFixed(
-        2
-      )}</li>
-      <li><strong>To Be Returned to Store:</strong> Rs. ${toBeReturned.toFixed(
-        2
-      )}</li><br/>
-      <li><strong>Total Returns:</strong> ${totalReturns}</li>
-    </ul>
-    <input type="number" id="storeToBankAmount" placeholder="Amount">
-    <button onclick="handleStoreToBank()">Send Store → Personal</button>
+    <div class="kpi-grid">
+      <div class="kpi-card">
+        <h4>Total from Store</h4>
+        <p>Rs. ${store.toFixed(2)}</p>
+      </div>
+      <div class="kpi-card">
+        <h4>Total to Friends</h4>
+        <p>Rs. ${distributed.toFixed(2)}</p>
+      </div>
+      <div class="kpi-card">
+        <h4>Total Returned</h4>
+        <p>Rs. ${returned.toFixed(2)}</p>
+      </div>
+      <div class="kpi-card">
+        <h4>Pending Distribution</h4>
+        <p>Rs. ${toBeDistributed.toFixed(2)}</p>
+      </div>
+      <div class="kpi-card">
+        <h4>Pending Return</h4>
+        <p>Rs. ${toBeReturned.toFixed(2)}</p>
+      </div>
+       <div class="kpi-card">
+        <h4>Total Friends</h4>
+        <p>${friends.length}</p>
+      </div>
+        <div class="kpi-card">
+        <h4>Total Returns</h4>
+        <p>${totalReturns}</p>
+      </div>
+    </div>
+    <div class="card chart-container">
+        <canvas id="overviewChart"></canvas>
+    </div>
   `;
-}
 
-function handleStoreToBank() {
-  const amount = parseFloat(document.getElementById("storeToBankAmount").value);
-  if (amount > 0) {
-    saveTransaction(
-      createTransaction(
-        today(),
-        "Store Account",
-        "Bank Account",
-        amount,
-        "Manual Transfer",
-        FUNDING_LAYER_NAME
-      )
-    );
-    renderAll();
-  }
+  const ctx = document.getElementById("overviewChart").getContext("2d");
+  new Chart(ctx, {
+    type: "doughnut",
+    data: {
+      labels: ["To Friends", "Returned", "To Be Distributed"],
+      datasets: [
+        {
+          data: [distributed, returned, toBeDistributed],
+          backgroundColor: ["#4f46e5", "#6366f1", "#a5b4fc"],
+        },
+      ],
+    },
+    options: {
+      responsive: true,
+      maintainAspectRatio: false,
+    },
+  });
 }
 
 function getFriendBalances(txns) {
   const balances = {};
-  getFriends().forEach((f) => (balances[f] = 0));
+  getFriends().forEach((f) => (balances[f] = { balance: 0, count: 0 }));
   txns.forEach((t) => {
-    if (balances.hasOwnProperty(t.from))
-      balances[t.from] -= parseFloat(t.amount);
-    if (balances.hasOwnProperty(t.to)) balances[t.to] += parseFloat(t.amount);
+    if (balances.hasOwnProperty(t.from)) {
+      balances[t.from].balance -= parseFloat(t.amount);
+      balances[t.from].count++;
+    }
+    if (balances.hasOwnProperty(t.to)) {
+      balances[t.to].balance += parseFloat(t.amount);
+      balances[t.to].count++;
+    }
   });
   return balances;
 }
 
 function renderFriendBalances() {
   const balances = getFriendBalances(getTransactions());
-  friendBalances.innerHTML = "<h3>Friend Balances</h3>";
-  const ul = document.createElement("ul");
-  for (const [friend, amount] of Object.entries(balances)) {
-    const li = document.createElement("li");
-    li.textContent = `${friend}: Rs. ${amount.toFixed(2)}`;
-    ul.appendChild(li);
+  friendBalances.innerHTML = "";
+  for (const [friend, data] of Object.entries(balances)) {
+    const card = document.createElement("div");
+    card.className = "card friend-card";
+    card.innerHTML = `
+      <div>
+        <h4>${friend}</h4>
+        <p>Balance: Rs. ${data.balance.toFixed(2)}</p>
+        <p>Transactions: ${data.count}</p>
+      </div>
+      <div class="actions">
+        <button onclick="removeFriend('${friend}')">Remove</button>
+      </div>
+    `;
+    friendBalances.appendChild(card);
   }
-  friendBalances.appendChild(ul);
 }
 
 function renderTransactionTable() {
   const txns = getTransactions();
+  const fromFilter = document.getElementById("filterFrom").value.toLowerCase();
+  const toFilter = document.getElementById("filterTo").value.toLowerCase();
+  const layerFilter = document
+    .getElementById("filterLayer")
+    .value.toLowerCase();
+  const startDateFilter = document.getElementById("filterStartDate").value;
+  const endDateFilter = document.getElementById("filterEndDate").value;
+
+  const filteredTxns = txns.filter((txn) => {
+    const fromMatch = txn.from.toLowerCase().includes(fromFilter);
+    const toMatch = txn.to.toLowerCase().includes(toFilter);
+    const layerMatch = txn.layer.toLowerCase().includes(layerFilter);
+    const date = new Date(txn.date);
+    const startDate = startDateFilter ? new Date(startDateFilter) : null;
+    const endDate = endDateFilter ? new Date(endDateFilter) : null;
+
+    if (startDate && date < startDate) {
+      return false;
+    }
+    if (endDate && date > endDate) {
+      return false;
+    }
+
+    return fromMatch && toMatch && layerMatch;
+  });
+
   table.innerHTML = "";
-  const dailyCount = {};
-  txns
+  filteredTxns
     .slice()
     .reverse()
     .forEach((txn, i) => {
-      const index = txns.length - 1 - i;
+      const index = txns.indexOf(txn);
       const row = document.createElement("tr");
       row.innerHTML = `
       <td>${txn.date}</td>
@@ -253,9 +334,6 @@ function renderTransactionTable() {
       <td><button onclick="deleteTransaction(${index})">🗑️</button></td>
     `;
       table.appendChild(row);
-      if (txn.layer === "Friend → Store") {
-        dailyCount[txn.date] = (dailyCount[txn.date] || 0) + 1;
-      }
     });
 }
 
@@ -344,4 +422,19 @@ document.getElementById("pasteJSONBtn").onclick = () => {
   }
 };
 
-window.onload = renderAll;
+
+  document.getElementById("filterFrom").addEventListener("input", renderTransactionTable);
+  document.getElementById("filterTo").addEventListener("input", renderTransactionTable);
+  document.getElementById("filterLayer").addEventListener("input", renderTransactionTable);
+  document.getElementById("filterStartDate").addEventListener("change", renderTransactionTable);
+  document.getElementById("filterEndDate").addEventListener("change", renderTransactionTable);
+
+  document.getElementById("clearFilters").addEventListener("click", () => {
+    document.getElementById("filterFrom").value = "";
+    document.getElementById("filterTo").value = "";
+    document.getElementById("filterLayer").value = "";
+    document.getElementById("filterStartDate").value = "";
+    document.getElementById("filterEndDate").value = "";
+    renderTransactionTable();
+  });
+
