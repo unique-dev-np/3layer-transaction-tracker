@@ -104,12 +104,20 @@ function renderOverviewPanel() {
   });
 
   const toBeReturned = friends - returned;
+  const toBeDistributed = store - friends;
 
   overviewPanel.innerHTML = `
     <h3>Overview</h3>
     <ul>
-      <li><strong>Total Sent from Store:</strong> Rs. ${store.toFixed(2)}</li>
-      <li><strong>Total Sent to Friends:</strong> Rs. ${friends.toFixed(2)}</li>
+      <li><strong>Total Sent from Store:</strong> Rs. ${store.toFixed(
+        2
+      )}</li> <br/>
+      <li><strong>Total Sent to Friends:</strong> Rs. ${friends.toFixed(
+        2
+      )}</li> 
+      <li><strong>To Be Sent to Friends:</strong> Rs. ${toBeDistributed.toFixed(
+        2
+      )}</li><br/>
       <li><strong>Total Returned to Store:</strong> Rs. ${returned.toFixed(
         2
       )}</li>
@@ -236,6 +244,34 @@ document.getElementById("returnSubmitBtn").onclick = () => {
       )
     );
     renderAll();
+  }
+};
+
+document.getElementById("copyJSONBtn").onclick = () => {
+  const txns = getTransactions();
+  const friends = getFriends();
+
+  navigator.clipboard.writeText(
+    JSON.stringify({ transactions: txns, friends })
+  );
+};
+
+document.getElementById("pasteJSONBtn").onclick = () => {
+  const pastedTxns = prompt("Paste transactions");
+
+  try {
+    const data = JSON.parse(pastedTxns);
+
+    const confirmPaste = confirm(
+      "Do you really want to paste new data? Everything befor will be ⚠erased⚠"
+    );
+
+    if (!confirmPaste) return;
+
+    localStorage.setItem(STORAGE_KEY, JSON.stringify(data.transactions));
+    localStorage.setItem(FRIEND_KEY, JSON.stringify(data.friends));
+  } catch {
+    console.log("Error");
   }
 };
 
