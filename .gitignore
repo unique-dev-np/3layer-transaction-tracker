@@ -3,7 +3,6 @@
 
 # Vite
 .vite/
-/dist
 
 # Logs
 npm-debug.log*
