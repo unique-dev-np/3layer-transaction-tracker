@@ -1,131 +1,15 @@
-<!DOCTYPE html>
+
+<!doctype html>
 <html lang="en">
   <head>
     <meta charset="UTF-8" />
+    <link rel="icon" type="image/svg+xml" href="/vite.svg" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Transaction Tracker Dashboard</title>
-    <link rel="stylesheet" href="style.css" />
+    <title>Transaction Tracker</title>
+    <link rel="stylesheet" href="./src/styles/global.css">
   </head>
   <body>
-    <div class="app-container">
-      <nav class="sidebar">
-        <div class="sidebar-header">
-          <h2>Transaction Tracker</h2>
-        </div>
-        <ul class="sidebar-nav">
-          <li><a href="#dashboard" class="active">Dashboard</a></li>
-          <li><a href="#friends">Friends</a></li>
-          <li><a href="#transactions">Transactions</a></li>
-          <li><a href="#utilities">Utilities</a></li>
-        </ul>
-      </nav>
-
-      <main class="main-content">
-        <section id="dashboard" class="page active">
-          <div class="header">
-            <h1>Dashboard</h1>
-          </div>
-          <div id="overviewPanel"></div>
-        </section>
-
-        <section id="friends" class="page">
-          <div class="header">
-            <h1>Friends Hub</h1>
-            <div class="form-group">
-              <input id="newFriendInput" placeholder="Enter friend name" />
-              <button id="addFriendBtn">Add Friend</button>
-            </div>
-          </div>
-          <div id="friendBalances" class="grid"></div>
-        </section>
-
-        <section id="transactions" class="page">
-          <div class="header">
-            <h1>All Transactions</h1>
-          </div>
-          <div class="filters">
-            <input type="text" id="filterFrom" placeholder="Filter by From..." />
-            <input type="text" id="filterTo" placeholder="Filter by To..." />
-            <input
-              type="text"
-              id="filterLayer"
-              placeholder="Filter by Layer..."
-            />
-            <input type="date" id="filterStartDate" />
-            <input type="date" id="filterEndDate" />
-            <button id="clearFilters">Clear Filters</button>
-          </div>
-          <div class="table-wrapper">
-            <table>
-              <thead>
-                <tr>
-                  <th>Date</th>
-                  <th>From</th>
-                  <th>To</th>
-                  <th>Amount</th>
-                  <th>Layer</th>
-                  <th>Note</th>
-                  <th>Remove</th>
-                </tr>
-              </thead>
-              <tbody id="transactionTable"></tbody>
-            </table>
-          </div>
-        </section>
-
-        <section id="utilities" class="page">
-          <div class="header">
-            <h1>Utilities</h1>
-          </div>
-          <div class="grid">
-            <div class="card form-card">
-              <h3>Distribute to Friends</h3>
-              <div class="form-group">
-                <select id="distributeFriendSelect"></select>
-                <input
-                  type="number"
-                  id="distributeAmount"
-                  placeholder="Amount"
-                  min="0"
-                />
-              </div>
-              <button id="distributeSubmitBtn">Distribute</button>
-            </div>
-            <div class="card form-card">
-              <h3>Friend → Store Transaction</h3>
-              <div class="form-group">
-                <select id="returnFriendSelect"></select>
-                <input
-                  type="number"
-                  id="returnAmount"
-                  placeholder="Amount"
-                  min="0"
-                />
-              </div>
-              <button id="returnSubmitBtn">Record Return</button>
-            </div>
-            <div class="card utility-card">
-              <h3>Data Management</h3>
-              <div class="utility-buttons">
-                <button id="copyJSONBtn">Copy JSON</button>
-                <button id="pasteJSONBtn">Import JSON</button>
-                <button id="addBackupBtn">Backup</button>
-              </div>
-              <div class="backups-section">
-                <h4>Backups</h4>
-                <ul id="backupContainer"></ul>
-              </div>
-            </div>
-          </div>
-        </section>
-      </main>
-    </div>
-
-    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
-    <script src="https://unpkg.com/feather-icons"></script>
-    <script type="module" src="./constants.js"></script>
-    <script type="module" src="./utils.js"></script>
-    <script type="module" src="./render.js"></script>
-    <script type="module" src="./main.js"></script>
+    <div id="root"></div>
+    <script type="module" src="/src/main.jsx"></script>
   </body>
 </html>

@@ -1,0 +1,580 @@
+{
+  "stores": [
+    {
+      "id": "a0b1c2d3-e4f5-6789-abcd-ef0123456789",
+      "name": "Default Store"
+    }
+  ],
+  "friends": [
+    {
+      "id": "f0e9d8c7-b6a5-4321-fedc-ba9876543210",
+      "name": "Sandi"
+    },
+    {
+      "id": "12345678-90ab-cdef-fedc-ba9876543210",
+      "name": "Rupak"
+    },
+    {
+      "id": "abcdef01-2345-6789-abcd-ef0123456789",
+      "name": "Dadiram"
+    },
+    {
+      "id": "01234567-89ab-cdef-0123-456789abcdef",
+      "name": "Prashant Esewa"
+    },
+    {
+      "id": "fedcba98-7654-3210-fedc-ba9876543210",
+      "name": "Siddhant"
+    },
+    {
+      "id": "98765432-10fe-dcba-9876-543210fedcba",
+      "name": "Maiju"
+    },
+    {
+      "id": "567890ab-cdef-0123-4567-89abcdef0123",
+      "name": "Nirmala"
+    }
+  ],
+  "transactions": [
+    {
+      "date": "2025-07-06",
+      "from": "Store Account",
+      "to": "Bank Account",
+      "amount": 20000,
+      "note": "Manual Transfer",
+      "layer": "StoreToPersonal",
+      "id": "00000000-0000-0000-0000-000000000001",
+      "storeId": "a0b1c2d3-e4f5-6789-abcd-ef0123456789",
+      "fromId": null,
+      "toId": null
+    },
+    {
+      "date": "2025-07-06",
+      "from": "Bank Account",
+      "to": "Sandi",
+      "amount": 7000,
+      "note": "Manual Distribution",
+      "layer": "Distribution",
+      "id": "00000000-0000-0000-0000-000000000002",
+      "storeId": null,
+      "fromId": null,
+      "toId": "f0e9d8c7-b6a5-4321-fedc-ba9876543210"
+    },
+    {
+      "date": "2025-07-06",
+      "from": "Bank Account",
+      "to": "Rupak",
+      "amount": 7000,
+      "note": "Manual Distribution",
+      "layer": "Distribution",
+      "id": "00000000-0000-0000-0000-000000000003",
+      "storeId": null,
+      "fromId": null,
+      "toId": "12345678-90ab-cdef-fedc-ba9876543210"
+    },
+    {
+      "date": "2025-07-06",
+      "from": "Bank Account",
+      "to": "Dadiram",
+      "amount": 3000,
+      "note": "Manual Distribution",
+      "layer": "Distribution",
+      "id": "00000000-0000-0000-0000-000000000004",
+      "storeId": null,
+      "fromId": null,
+      "toId": "abcdef01-2345-6789-abcd-ef0123456789"
+    },
+    {
+      "date": "2025-07-06",
+      "from": "Sandi",
+      "to": "Store Account",
+      "amount": 605,
+      "note": "Manual Return",
+      "layer": "Return",
+      "id": "00000000-0000-0000-0000-000000000005",
+      "storeId": "a0b1c2d3-e4f5-6789-abcd-ef0123456789",
+      "fromId": "f0e9d8c7-b6a5-4321-fedc-ba9876543210",
+      "toId": null
+    },
+    {
+      "date": "2025-07-06",
+      "from": "Sandi",
+      "to": "Store Account",
+      "amount": 470,
+      "note": "Manual Return",
+      "layer": "Return",
+      "id": "00000000-0000-0000-0000-000000000006",
+      "storeId": "a0b1c2d3-e4f5-6789-abcd-ef0123456789",
+      "fromId": "f0e9d8c7-b6a5-4321-fedc-ba9876543210",
+      "toId": null
+    },
+    {
+      "date": "2025-07-06",
+      "from": "Sandi",
+      "to": "Store Account",
+      "amount": 550,
+      "note": "Manual Return",
+      "layer": "Return",
+      "id": "00000000-0000-0000-0000-000000000007",
+      "storeId": "a0b1c2d3-e4f5-6789-abcd-ef0123456789",
+      "fromId": "f0e9d8c7-b6a5-4321-fedc-ba9876543210",
+      "toId": null
+    },
+    {
+      "date": "2025-07-06",
+      "from": "Sandi",
+      "to": "Store Account",
+      "amount": 500,
+      "note": "Manual Return",
+      "layer": "Return",
+      "id": "00000000-0000-0000-0000-000000000008",
+      "storeId": "a0b1c2d3-e4f5-6789-abcd-ef0123456789",
+      "fromId": "f0e9d8c7-b6a5-4321-fedc-ba9876543210",
+      "toId": null
+    },
+    {
+      "date": "2025-07-06",
+      "from": "Sandi",
+      "to": "Store Account",
+      "amount": 380,
+      "note": "Manual Return",
+      "layer": "Return",
+      "id": "00000000-0000-0000-0000-000000000009",
+      "storeId": "a0b1c2d3-e4f5-6789-abcd-ef0123456789",
+      "fromId": "f0e9d8c7-b6a5-4321-fedc-ba9876543210",
+      "toId": null
+    },
+    {
+      "date": "2025-07-06",
+      "from": "Sandi",
+      "to": "Store Account",
+      "amount": 530,
+      "note": "Manual Return",
+      "layer": "Return",
+      "id": "00000000-0000-0000-0000-000000000010",
+      "storeId": "a0b1c2d3-e4f5-6789-abcd-ef0123456789",
+      "fromId": "f0e9d8c7-b6a5-4321-fedc-ba9876543210",
+      "toId": null
+    },
+    {
+      "date": "2025-07-06",
+      "from": "Rupak",
+      "to": "Store Account",
+      "amount": 580,
+      "note": "Manual Return",
+      "layer": "Return",
+      "id": "00000000-0000-0000-0000-000000000011",
+      "storeId": "a0b1c2d3-e4f5-6789-abcd-ef0123456789",
+      "fromId": "12345678-90ab-cdef-fedc-ba9876543210",
+      "toId": null
+    },
+    {
+      "date": "2025-07-06",
+      "from": "Rupak",
+      "to": "Store Account",
+      "amount": 710,
+      "note": "Manual Return",
+      "layer": "Return",
+      "id": "00000000-0000-0000-0000-000000000012",
+      "storeId": "a0b1c2d3-e4f5-6789-abcd-ef0123456789",
+      "fromId": "12345678-90ab-cdef-fedc-ba9876543210",
+      "toId": null
+    },
+    {
+      "date": "2025-07-06",
+      "from": "Rupak",
+      "to": "Store Account",
+      "amount": 1005,
+      "note": "Manual Return",
+      "layer": "Return",
+      "id": "00000000-0000-0000-0000-000000000013",
+      "storeId": "a0b1c2d3-e4f5-6789-abcd-ef0123456789",
+      "fromId": "12345678-90ab-cdef-fedc-ba9876543210",
+      "toId": null
+    },
+    {
+      "date": "2025-07-06",
+      "from": "Rupak",
+      "to": "Store Account",
+      "amount": 584,
+      "note": "Manual Return",
+      "layer": "Return",
+      "id": "00000000-0000-0000-0000-000000000014",
+      "storeId": "a0b1c2d3-e4f5-6789-abcd-ef0123456789",
+      "fromId": "12345678-90ab-cdef-fedc-ba9876543210",
+      "toId": null
+    },
+    {
+      "date": "2025-07-06",
+      "from": "Rupak",
+      "to": "Store Account",
+      "amount": 760,
+      "note": "Manual Return",
+      "layer": "Return",
+      "id": "00000000-0000-0000-0000-000000000015",
+      "storeId": "a0b1c2d3-e4f5-6789-abcd-ef0123456789",
+      "fromId": "12345678-90ab-cdef-fedc-ba9876543210",
+      "toId": null
+    },
+    {
+      "date": "2025-07-06",
+      "from": "Sandi",
+      "to": "Store Account",
+      "amount": 710,
+      "note": "Manual Return",
+      "layer": "Return",
+      "id": "00000000-0000-0000-0000-000000000016",
+      "storeId": "a0b1c2d3-e4f5-6789-abcd-ef0123456789",
+      "fromId": "f0e9d8c7-b6a5-4321-fedc-ba9876543210",
+      "toId": null
+    },
+    {
+      "date": "2025-07-06",
+      "from": "Dadiram",
+      "to": "Store Account",
+      "amount": 310,
+      "note": "Manual Return",
+      "layer": "Return",
+      "id": "00000000-0000-0000-0000-000000000017",
+      "storeId": "a0b1c2d3-e4f5-6789-abcd-ef0123456789",
+      "fromId": "abcdef01-2345-6789-abcd-ef0123456789",
+      "toId": null
+    },
+    {
+      "date": "2025-07-06",
+      "from": "Store Account",
+      "to": "Bank Account",
+      "amount": 1000,
+      "note": "Manual Transfer",
+      "layer": "StoreToPersonal",
+      "id": "00000000-0000-0000-0000-000000000018",
+      "storeId": "a0b1c2d3-e4f5-6789-abcd-ef0123456789",
+      "fromId": null,
+      "toId": null
+    },
+    {
+      "date": "2025-07-06",
+      "from": "Store Account",
+      "to": "Bank Account",
+      "amount": 9000,
+      "note": "Manual Transfer",
+      "layer": "StoreToPersonal",
+      "id": "00000000-0000-0000-0000-000000000019",
+      "storeId": "a0b1c2d3-e4f5-6789-abcd-ef0123456789",
+      "fromId": null,
+      "toId": null
+    },
+    {
+      "date": "2025-07-06",
+      "from": "Bank Account",
+      "to": "Prashant Esewa",
+      "amount": 2500,
+      "note": "Manual Distribution",
+      "layer": "Distribution",
+      "id": "00000000-0000-0000-0000-000000000020",
+      "storeId": null,
+      "fromId": null,
+      "toId": "01234567-89ab-cdef-0123-456789abcdef"
+    },
+    {
+      "date": "2025-07-06",
+      "from": "Prashant Esewa",
+      "to": "Store Account",
+      "amount": 480,
+      "note": "Manual Return",
+      "layer": "Return",
+      "id": "00000000-0000-0000-0000-000000000021",
+      "storeId": "a0b1c2d3-e4f5-6789-abcd-ef0123456789",
+      "fromId": "01234567-89ab-cdef-0123-456789abcdef",
+      "toId": null
+    },
+    {
+      "date": "2025-07-06",
+      "from": "Sandi",
+      "to": "Store Account",
+      "amount": 350,
+      "note": "Manual Return",
+      "layer": "Return",
+      "id": "00000000-0000-0000-0000-000000000022",
+      "storeId": "a0b1c2d3-e4f5-6789-abcd-ef0123456789",
+      "fromId": "f0e9d8c7-b6a5-4321-fedc-ba9876543210",
+      "toId": null
+    },
+    {
+      "date": "2025-07-06",
+      "from": "Bank Account",
+      "to": "Siddhant",
+      "amount": 3000,
+      "note": "Manual Distribution",
+      "layer": "Distribution",
+      "id": "00000000-0000-0000-0000-000000000023",
+      "storeId": null,
+      "fromId": null,
+      "toId": "fedcba98-7654-3210-fedc-ba9876543210"
+    },
+    {
+      "date": "2025-07-06",
+      "from": "Siddhant",
+      "to": "Store Account",
+      "amount": 760,
+      "note": "Manual Return",
+      "layer": "Return",
+      "id": "00000000-0000-0000-0000-000000000024",
+      "storeId": "a0b1c2d3-e4f5-6789-abcd-ef0123456789",
+      "fromId": "fedcba98-7654-3210-fedc-ba9876543210",
+      "toId": null
+    },
+    {
+      "date": "2025-07-06",
+      "from": "Prashant Esewa",
+      "to": "Store Account",
+      "amount": 445,
+      "note": "Manual Return",
+      "layer": "Return",
+      "id": "00000000-0000-0000-0000-000000000025",
+      "storeId": "a0b1c2d3-e4f5-6789-abcd-ef0123456789",
+      "fromId": "01234567-89ab-cdef-0123-456789abcdef",
+      "toId": null
+    },
+    {
+      "date": "2025-07-06",
+      "from": "Rupak",
+      "to": "Store Account",
+      "amount": 260,
+      "note": "Manual Return",
+      "layer": "Return",
+      "id": "00000000-0000-0000-0000-000000000026",
+      "storeId": "a0b1c2d3-e4f5-6789-abcd-ef0123456789",
+      "fromId": "12345678-90ab-cdef-fedc-ba9876543210",
+      "toId": null
+    },
+    {
+      "date": "2025-07-06",
+      "from": "Siddhant",
+      "to": "Store Account",
+      "amount": 360,
+      "note": "Manual Return",
+      "layer": "Return",
+      "id": "00000000-0000-0000-0000-000000000027",
+      "storeId": "a0b1c2d3-e4f5-6789-abcd-ef0123456789",
+      "fromId": "fedcba98-7654-3210-fedc-ba9876543210",
+      "toId": null
+    },
+    {
+      "date": "2025-07-06",
+      "from": "Bank Account",
+      "to": "Maiju",
+      "amount": 3000,
+      "note": "Manual Distribution",
+      "layer": "Distribution",
+      "id": "00000000-0000-0000-0000-000000000028",
+      "storeId": null,
+      "fromId": null,
+      "toId": "98765432-10fe-dcba-9876-543210fedcba"
+    },
+    {
+      "date": "2025-07-06",
+      "from": "Sandi",
+      "to": "Store Account",
+      "amount": 370,
+      "note": "Manual Return",
+      "layer": "Return",
+      "id": "00000000-0000-0000-0000-000000000029",
+      "storeId": "a0b1c2d3-e4f5-6789-abcd-ef0123456789",
+      "fromId": "f0e9d8c7-b6a5-4321-fedc-ba9876543210",
+      "toId": null
+    },
+    {
+      "date": "2025-07-06",
+      "from": "Dadiram",
+      "to": "Store Account",
+      "amount": 510,
+      "note": "Manual Return",
+      "layer": "Return",
+      "id": "00000000-0000-0000-0000-000000000030",
+      "storeId": "a0b1c2d3-e4f5-6789-abcd-ef0123456789",
+      "fromId": "abcdef01-2345-6789-abcd-ef0123456789",
+      "toId": null
+    },
+    {
+      "date": "2025-07-07",
+      "from": "Rupak",
+      "to": "Store Account",
+      "amount": 460,
+      "note": "Manual Return",
+      "layer": "Return",
+      "id": "00000000-0000-0000-0000-000000000031",
+      "storeId": "a0b1c2d3-e4f5-6789-abcd-ef0123456789",
+      "fromId": "12345678-90ab-cdef-fedc-ba9876543210",
+      "toId": null
+    },
+    {
+      "date": "2025-07-07",
+      "from": "Siddhant",
+      "to": "Store Account",
+      "amount": 160,
+      "note": "Manual Return",
+      "layer": "Return",
+      "id": "00000000-0000-0000-0000-000000000032",
+      "storeId": "a0b1c2d3-e4f5-6789-abcd-ef0123456789",
+      "fromId": "fedcba98-7654-3210-fedc-ba9876543210",
+      "toId": null
+    },
+    {
+      "date": "2025-07-07",
+      "from": "Sandi",
+      "to": "Store Account",
+      "amount": 520,
+      "note": "Manual Return",
+      "layer": "Return",
+      "id": "00000000-0000-0000-0000-000000000033",
+      "storeId": "a0b1c2d3-e4f5-6789-abcd-ef0123456789",
+      "fromId": "f0e9d8c7-b6a5-4321-fedc-ba9876543210",
+      "toId": null
+    },
+    {
+      "date": "2025-07-07",
+      "from": "Dadiram",
+      "to": "Store Account",
+      "amount": 510,
+      "note": "Manual Return",
+      "layer": "Return",
+      "id": "00000000-0000-0000-0000-000000000034",
+      "storeId": "a0b1c2d3-e4f5-6789-abcd-ef0123456789",
+      "fromId": "abcdef01-2345-6789-abcd-ef0123456789",
+      "toId": null
+    },
+    {
+      "date": "2025-07-07",
+      "from": "Maiju",
+      "to": "Store Account",
+      "amount": 510,
+      "note": "Manual Return",
+      "layer": "Return",
+      "id": "00000000-0000-0000-0000-000000000035",
+      "storeId": "a0b1c2d3-e4f5-6789-abcd-ef0123456789",
+      "fromId": "98765432-10fe-dcba-9876-543210fedcba",
+      "toId": null
+    },
+    {
+      "date": "2025-07-07",
+      "from": "Rupak",
+      "to": "Store Account",
+      "amount": 630,
+      "note": "Manual Return",
+      "layer": "Return",
+      "id": "00000000-0000-0000-0000-000000000036",
+      "storeId": "a0b1c2d3-e4f5-6789-abcd-ef0123456789",
+      "fromId": "12345678-90ab-cdef-fedc-ba9876543210",
+      "toId": null
+    },
+    {
+      "date": "2025-07-07",
+      "from": "Prashant Esewa",
+      "to": "Store Account",
+      "amount": 700,
+      "note": "Manual Return",
+      "layer": "Return",
+      "id": "00000000-0000-0000-0000-000000000037",
+      "storeId": "a0b1c2d3-e4f5-6789-abcd-ef0123456789",
+      "fromId": "01234567-89ab-cdef-0123-456789abcdef",
+      "toId": null
+    },
+    {
+      "date": "2025-07-07",
+      "from": "Sandi",
+      "to": "Store Account",
+      "amount": 470,
+      "note": "Manual Return",
+      "layer": "Return",
+      "id": "00000000-0000-0000-0000-000000000038",
+      "storeId": "a0b1c2d3-e4f5-6789-abcd-ef0123456789",
+      "fromId": "f0e9d8c7-b6a5-4321-fedc-ba9876543210",
+      "toId": null
+    },
+    {
+      "date": "2025-07-07",
+      "from": "Dadiram",
+      "to": "Store Account",
+      "amount": 710,
+      "note": "Manual Return",
+      "layer": "Return",
+      "id": "00000000-0000-0000-0000-000000000039",
+      "storeId": "a0b1c2d3-e4f5-6789-abcd-ef0123456789",
+      "fromId": "abcdef01-2345-6789-abcd-ef0123456789",
+      "toId": null
+    },
+    {
+      "date": "2025-07-07",
+      "from": "Siddhant",
+      "to": "Store Account",
+      "amount": 960,
+      "note": "Manual Return",
+      "layer": "Return",
+      "id": "00000000-0000-0000-0000-000000000040",
+      "storeId": "a0b1c2d3-e4f5-6789-abcd-ef0123456789",
+      "fromId": "fedcba98-7654-3210-fedc-ba9876543210",
+      "toId": null
+    },
+    {
+      "date": "2025-07-07",
+      "from": "Nirmala",
+      "to": "Store Account",
+      "amount": 510,
+      "note": "Manual Return",
+      "layer": "Return",
+      "id": "00000000-0000-0000-0000-000000000041",
+      "storeId": "a0b1c2d3-e4f5-6789-abcd-ef0123456789",
+      "fromId": "567890ab-cdef-0123-4567-89abcdef0123",
+      "toId": null
+    },
+    {
+      "date": "2025-07-07",
+      "from": "Rupak",
+      "to": "Store Account",
+      "amount": 510,
+      "note": "Manual Return",
+      "layer": "Return",
+      "id": "00000000-0000-0000-0000-000000000042",
+      "storeId": "a0b1c2d3-e4f5-6789-abcd-ef0123456789",
+      "fromId": "12345678-90ab-cdef-fedc-ba9876543210",
+      "toId": null
+    },
+    {
+      "date": "2025-07-07",
+      "from": "Sandi",
+      "to": "Store Account",
+      "amount": 1545,
+      "note": "Manual Return",
+      "layer": "Return",
+      "id": "00000000-0000-0000-0000-000000000043",
+      "storeId": "a0b1c2d3-e4f5-6789-abcd-ef0123456789",
+      "fromId": "f0e9d8c7-b6a5-4321-fedc-ba9876543210",
+      "toId": null
+    },
+    {
+      "date": "2025-07-07",
+      "from": "Rupak",
+      "to": "Store Account",
+      "amount": 710,
+      "note": "Manual Return",
+      "layer": "Return",
+      "id": "00000000-0000-0000-0000-000000000044",
+      "storeId": "a0b1c2d3-e4f5-6789-abcd-ef0123456789",
+      "fromId": "12345678-90ab-cdef-fedc-ba9876543210",
+      "toId": null
+    },
+    {
+      "date": "2025-07-07",
+      "from": "Bank Account",
+      "to": "Sandi",
+      "amount": 3000,
+      "note": "Manual Distribution",
+      "layer": "Distribution",
+      "id": "00000000-0000-0000-0000-000000000045",
+      "storeId": null,
+      "fromId": null,
+      "toId": "f0e9d8c7-b6a5-4321-fedc-ba9876543210"
+    }
+  ]
+}

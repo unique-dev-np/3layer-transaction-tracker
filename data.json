@@ -1,0 +1,373 @@
+{
+  "transactions": [
+    {
+      "date": "2025-07-06",
+      "from": "Store Account",
+      "to": "Bank Account",
+      "amount": 20000,
+      "note": "Manual Transfer",
+      "layer": "StoreToPersonal"
+    },
+    {
+      "date": "2025-07-06",
+      "from": "Bank Account",
+      "to": "Sandi",
+      "amount": 7000,
+      "note": "Manual Distribution",
+      "layer": "Distribution"
+    },
+    {
+      "date": "2025-07-06",
+      "from": "Bank Account",
+      "to": "Rupak",
+      "amount": 7000,
+      "note": "Manual Distribution",
+      "layer": "Distribution"
+    },
+    {
+      "date": "2025-07-06",
+      "from": "Bank Account",
+      "to": "Dadiram",
+      "amount": 3000,
+      "note": "Manual Distribution",
+      "layer": "Distribution"
+    },
+    {
+      "date": "2025-07-06",
+      "from": "Sandi",
+      "to": "Store Account",
+      "amount": 605,
+      "note": "Manual Return",
+      "layer": "Return"
+    },
+    {
+      "date": "2025-07-06",
+      "from": "Sandi",
+      "to": "Store Account",
+      "amount": 470,
+      "note": "Manual Return",
+      "layer": "Return"
+    },
+    {
+      "date": "2025-07-06",
+      "from": "Sandi",
+      "to": "Store Account",
+      "amount": 550,
+      "note": "Manual Return",
+      "layer": "Return"
+    },
+    {
+      "date": "2025-07-06",
+      "from": "Sandi",
+      "to": "Store Account",
+      "amount": 500,
+      "note": "Manual Return",
+      "layer": "Return"
+    },
+    {
+      "date": "2025-07-06",
+      "from": "Sandi",
+      "to": "Store Account",
+      "amount": 380,
+      "note": "Manual Return",
+      "layer": "Return"
+    },
+    {
+      "date": "2025-07-06",
+      "from": "Sandi",
+      "to": "Store Account",
+      "amount": 530,
+      "note": "Manual Return",
+      "layer": "Return"
+    },
+    {
+      "date": "2025-07-06",
+      "from": "Rupak",
+      "to": "Store Account",
+      "amount": 580,
+      "note": "Manual Return",
+      "layer": "Return"
+    },
+    {
+      "date": "2025-07-06",
+      "from": "Rupak",
+      "to": "Store Account",
+      "amount": 710,
+      "note": "Manual Return",
+      "layer": "Return"
+    },
+    {
+      "date": "2025-07-06",
+      "from": "Rupak",
+      "to": "Store Account",
+      "amount": 1005,
+      "note": "Manual Return",
+      "layer": "Return"
+    },
+    {
+      "date": "2025-07-06",
+      "from": "Rupak",
+      "to": "Store Account",
+      "amount": 584,
+      "note": "Manual Return",
+      "layer": "Return"
+    },
+    {
+      "date": "2025-07-06",
+      "from": "Rupak",
+      "to": "Store Account",
+      "amount": 760,
+      "note": "Manual Return",
+      "layer": "Return"
+    },
+    {
+      "date": "2025-07-06",
+      "from": "Sandi",
+      "to": "Store Account",
+      "amount": 710,
+      "note": "Manual Return",
+      "layer": "Return"
+    },
+    {
+      "date": "2025-07-06",
+      "from": "Dadiram",
+      "to": "Store Account",
+      "amount": 310,
+      "note": "Manual Return",
+      "layer": "Return"
+    },
+    {
+      "date": "2025-07-06",
+      "from": "Store Account",
+      "to": "Bank Account",
+      "amount": 1000,
+      "note": "Manual Transfer",
+      "layer": "StoreToPersonal"
+    },
+    {
+      "date": "2025-07-06",
+      "from": "Store Account",
+      "to": "Bank Account",
+      "amount": 9000,
+      "note": "Manual Transfer",
+      "layer": "StoreToPersonal"
+    },
+    {
+      "date": "2025-07-06",
+      "from": "Bank Account",
+      "to": "Prashant Esewa",
+      "amount": 2500,
+      "note": "Manual Distribution",
+      "layer": "Distribution"
+    },
+    {
+      "date": "2025-07-06",
+      "from": "Prashant Esewa",
+      "to": "Store Account",
+      "amount": 480,
+      "note": "Manual Return",
+      "layer": "Return"
+    },
+    {
+      "date": "2025-07-06",
+      "from": "Sandi",
+      "to": "Store Account",
+      "amount": 350,
+      "note": "Manual Return",
+      "layer": "Return"
+    },
+    {
+      "date": "2025-07-06",
+      "from": "Bank Account",
+      "to": "Siddhant",
+      "amount": 3000,
+      "note": "Manual Distribution",
+      "layer": "Distribution"
+    },
+    {
+      "date": "2025-07-06",
+      "from": "Siddhant",
+      "to": "Store Account",
+      "amount": 760,
+      "note": "Manual Return",
+      "layer": "Return"
+    },
+    {
+      "date": "2025-07-06",
+      "from": "Prashant Esewa",
+      "to": "Store Account",
+      "amount": 445,
+      "note": "Manual Return",
+      "layer": "Return"
+    },
+    {
+      "date": "2025-07-06",
+      "from": "Rupak",
+      "to": "Store Account",
+      "amount": 260,
+      "note": "Manual Return",
+      "layer": "Return"
+    },
+    {
+      "date": "2025-07-06",
+      "from": "Siddhant",
+      "to": "Store Account",
+      "amount": 360,
+      "note": "Manual Return",
+      "layer": "Return"
+    },
+    {
+      "date": "2025-07-06",
+      "from": "Bank Account",
+      "to": "Maiju",
+      "amount": 3000,
+      "note": "Manual Distribution",
+      "layer": "Distribution"
+    },
+    {
+      "date": "2025-07-06",
+      "from": "Sandi",
+      "to": "Store Account",
+      "amount": 370,
+      "note": "Manual Return",
+      "layer": "Return"
+    },
+    {
+      "date": "2025-07-06",
+      "from": "Dadiram",
+      "to": "Store Account",
+      "amount": 510,
+      "note": "Manual Return",
+      "layer": "Return"
+    },
+    {
+      "date": "2025-07-07",
+      "from": "Rupak",
+      "to": "Store Account",
+      "amount": 460,
+      "note": "Manual Return",
+      "layer": "Return"
+    },
+    {
+      "date": "2025-07-07",
+      "from": "Siddhant",
+      "to": "Store Account",
+      "amount": 160,
+      "note": "Manual Return",
+      "layer": "Return"
+    },
+    {
+      "date": "2025-07-07",
+      "from": "Sandi",
+      "to": "Store Account",
+      "amount": 520,
+      "note": "Manual Return",
+      "layer": "Return"
+    },
+    {
+      "date": "2025-07-07",
+      "from": "Dadiram",
+      "to": "Store Account",
+      "amount": 510,
+      "note": "Manual Return",
+      "layer": "Return"
+    },
+    {
+      "date": "2025-07-07",
+      "from": "Maiju",
+      "to": "Store Account",
+      "amount": 510,
+      "note": "Manual Return",
+      "layer": "Return"
+    },
+    {
+      "date": "2025-07-07",
+      "from": "Rupak",
+      "to": "Store Account",
+      "amount": 630,
+      "note": "Manual Return",
+      "layer": "Return"
+    },
+    {
+      "date": "2025-07-07",
+      "from": "Prashant Esewa",
+      "to": "Store Account",
+      "amount": 700,
+      "note": "Manual Return",
+      "layer": "Return"
+    },
+    {
+      "date": "2025-07-07",
+      "from": "Sandi",
+      "to": "Store Account",
+      "amount": 470,
+      "note": "Manual Return",
+      "layer": "Return"
+    },
+    {
+      "date": "2025-07-07",
+      "from": "Dadiram",
+      "to": "Store Account",
+      "amount": 710,
+      "note": "Manual Return",
+      "layer": "Return"
+    },
+    {
+      "date": "2025-07-07",
+      "from": "Siddhant",
+      "to": "Store Account",
+      "amount": 960,
+      "note": "Manual Return",
+      "layer": "Return"
+    },
+    {
+      "date": "2025-07-07",
+      "from": "Nirmala",
+      "to": "Store Account",
+      "amount": 510,
+      "note": "Manual Return",
+      "layer": "Return"
+    },
+    {
+      "date": "2025-07-07",
+      "from": "Rupak",
+      "to": "Store Account",
+      "amount": 510,
+      "note": "Manual Return",
+      "layer": "Return"
+    },
+    {
+      "date": "2025-07-07",
+      "from": "Sandi",
+      "to": "Store Account",
+      "amount": 1545,
+      "note": "Manual Return",
+      "layer": "Return"
+    },
+    {
+      "date": "2025-07-07",
+      "from": "Rupak",
+      "to": "Store Account",
+      "amount": 710,
+      "note": "Manual Return",
+      "layer": "Return"
+    },
+    {
+      "date": "2025-07-07",
+      "from": "Bank Account",
+      "to": "Sandi",
+      "amount": 3000,
+      "note": "Manual Distribution",
+      "layer": "Distribution"
+    }
+  ],
+  "friends": [
+    "Sandi",
+    "Rupak",
+    "Dadiram",
+    "Prashant Esewa",
+    "Siddhant",
+    "Maiju",
+    "Nirmala"
+  ]
+}

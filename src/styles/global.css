@@ -1,0 +1,30 @@
+
+* {
+  box-sizing: border-box;
+}
+
+:root {
+  --primary-color: #4f46e5;
+  --primary-color-light: #e0e7ff;
+  --secondary-color: #6366f1;
+  --background-color: #f4f7f6; /* Lighter background */
+  --text-color: #333; /* Darker text for better contrast */
+  --text-color-light: #666; /* Lighter text for secondary info */
+  --heading-color: #1a1a1a; /* Even darker for headings */
+  --card-background: #ffffff;
+  --shadow-color: rgba(0, 0, 0, 0.08); /* Slightly more pronounced shadow */
+  --border-color: #e0e0e0; /* Softer border */
+  --input-background: #f9f9f9; /* Light input background */
+  --button-primary-bg: var(--primary-color);
+  --button-primary-text: #ffffff;
+  --button-delete-bg: #ef4444; /* Red for delete */
+  --button-delete-text: #ffffff;
+}
+
+body {
+  font-family: "Inter", sans-serif;
+  margin: 0;
+  padding: 0;
+  background: var(--background-color);
+  color: var(--text-color);
+}

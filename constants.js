@@ -1,7 +1,18 @@
-export const STORAGE_KEY = "layerTransactions";
-export const FRIEND_KEY = "customFriends";
-export const BACKUPS_KEY = "backups";
+export const STORAGE_KEYS = {
+  TRANSACTIONS: "transactions",
+  FRIENDS: "friends",
+  STORES: "stores",
+  BACKUPS: "backups",
+};
 
-export const FUNDING_LAYER_NAME = "StoreToPersonal";
-export const DISTRIBUTION_LAYER_NAME = "Distribution";
-export const RETURN_LAYER_NAME = "Return";
+export const ACCOUNT_NAMES = {
+  MY_ACCOUNT: "My Account",
+  BANK_ACCOUNT: "Bank Account",
+};
+
+export const TRANSACTION_LAYERS = {
+  STORE_TO_MY: "StoreToMy",
+  DISTRIBUTION: "Distribution",
+  RETURN: "Return",
+  FRIEND_TO_MY: "FriendToMy",
+};
